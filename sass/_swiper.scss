@@ -1,0 +1,57 @@
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* 07 - SWIPER */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.swiperMainWrapper {
+	position: relative;
+}
+
+.swiper-wrapper {
+    cursor: url(../../img/drag.png) 16 9, ew-resize;
+}
+
+.swiper-button-disabled {
+    + .swiper-button-disabled + .swiper-container {
+    	.swiper-wrapper {
+	     	transform: none !important;
+	     	cursor: auto;
+	    }
+	    .swiper-pagination {
+	      display: none;
+	    }
+	  }
+    display: none;
+}
+
+.swiper-pagination.relative-pagination {
+	position: relative;
+	margin-top: 30px;
+}
+
+/*----------------------------------------------------------------*/
+/* HOVER
+/*----------------------------------------------------------------*/
+
+@media (min-width: 992px) {
+
+}
+
+/*----------------------------------------------------------------*/
+/* Media Queries
+/*----------------------------------------------------------------*/
+
+@media (max-width: 1500px) {
+
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+    
+}
+
+@media (max-width: 767px) {
+    
+}

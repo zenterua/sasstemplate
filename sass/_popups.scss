@@ -1,0 +1,171 @@
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* 06 - POPUPS */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.popupWrapper {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    transition-delay: 600ms;
+    &.active {
+        left: 0;
+        transition-delay: 0s;
+        .bgLayer {
+            opacity: 1;
+        }
+    }
+    .bgLayer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -100px;
+        bottom: -100px;
+        opacity: 0;
+        background: rgba(0, 0, 0, .8);
+        transition: opacity 300ms linear;
+    }
+
+    .buttonClose {
+        width: 40px;
+        height: 40px;
+        background: #0084ff;
+        display: inline-block;
+        vertical-align: bottom;
+        cursor: pointer;
+        span {
+            position: absolute;
+            top: 50%;
+            background: #2e2e2e;
+            height: 1px;
+            width: 100%;
+            display: block;
+            transition: all 150ms linear;
+            &:first-child {
+                transform: rotate(-45deg);
+            }
+            &:last-child {
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+.popupContent {
+    position: absolute;
+    top: 0;
+    left: -10000px;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    opacity: 0;
+    font-size: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    text-align: center;
+    transform: translateY(100px);
+    transition: transform 300ms linear, height 300ms linear, opacity 300ms linear, left 0s linear 300ms;
+    &.active {
+        position: relative;
+        opacity: 1;
+        left: 0;
+        transform: translateY(0);
+        transition: transform 300ms linear, height 500ms linear, opacity 300ms linear, left 0s linear; 
+    }
+    .layerClose {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 10000px;
+    }
+
+    // Video popup animation
+    
+    &[data-rel="videoPopup"] {
+        padding: 0;
+        height: 0;
+        left: 0;
+        transform: translateY(0);
+        transition: height 350ms linear, left 0s linear 600ms, opacity 0s linear 500ms;
+        .popupContainer {
+            height: 100%;
+            background: #000;
+        }
+        iframe  {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        &.active {
+            height: 100%;
+            transition: height 350ms linear;
+        }
+    }
+    &:after {
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+        content: '';
+    }
+}
+
+.popupContainer {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    position: relative;
+    text-align: left;
+    background: #fff;
+    max-width: 100%;
+    &.size1 {
+        max-width: 750px;
+    }
+    .buttonClose {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+// Video popup
+
+.popupVideoWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*----------------------------------------------------------------*/
+/* HOVER
+/*----------------------------------------------------------------*/
+
+@media (min-width: 992px) {
+
+}
+
+/*----------------------------------------------------------------*/
+/* Media Queries
+/*----------------------------------------------------------------*/
+
+@media (max-width: 1500px) {
+
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+    
+}
+
+@media (max-width: 767px) {
+    
+}

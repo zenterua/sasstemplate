@@ -1,0 +1,473 @@
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* SHORTCODES */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Main*/
+
+#content-block {
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 100%;
+    position: relative;
+}
+
+html.overflow-hidden body,
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.cellView {
+    display: table-cell;
+    vertical-align: middle;
+    width: 10000px;
+}
+
+/*Body selection*/
+
+::selection {
+    color: #fefefe;
+    background: #1e1e1e;
+}
+
+::-moz-selection {
+    color: #fefefe;
+    background: #1e1e1e;
+}
+
+/*Helper classes*/
+
+.nopadding,
+.nopadding>*[class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.bgFixed {
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+body.mobile .bgFixed {
+    background-attachment: scroll;
+}
+
+/*Article*/
+
+.simpleArticle {
+    color: #888;
+    font-size: 13px;
+    line-height: 20px;
+    &.light {
+        color: #fff;
+    }
+    &.extraLight {
+        color: rgba(255, 255, 255, .7);
+    }
+    p {
+        margin-bottom: 30px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    ul {
+        li {
+            padding-left: 15px;
+            &:before {
+                position: absolute;
+                top: 6px;
+                left: 0;
+                width: 6px;
+                height: 6px;
+                border-radius: 100%;
+                background: currentColor;
+                content: "";
+            }
+        }
+        
+    }
+    ol {
+        counter-reset: number;
+        li:before {
+            color: #0084ff;
+            margin-right: 5px;
+            counter-increment: number;
+            content: "#" counter(number);
+        }
+    }
+    li {
+        position: relative;
+        margin-bottom: 8px;
+    }
+    li:last-chil {
+        margin-bottom: 8px;
+    }
+    a:not(.button) {
+        color: #0084ff;
+    }
+    br {
+        line-height: 1em;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 30px;
+    }
+}
+
+.h1,
+h1,
+.h2,
+h2,
+.h3,
+h3,
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6 {
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.h1,
+h1 {
+    font-size: 70px;
+    line-height: 70px;
+}
+
+.h2,
+h2 {
+    font-size: 40px;
+    line-height: 46px;
+}
+
+.h3,
+h3 {
+    font-size: 30px;
+    line-height: 34px;
+}
+
+.h4,
+h4 {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.h5,
+h5 {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.h6,
+h6 {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.as.light{
+    color: #fff;
+}
+
+.large {
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.normall {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.small {
+    font-size: 14px;
+    line-height: 24px;
+}
+/*Buttons*/
+
+button {
+	background: transparent;
+}
+
+.button {
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    border: 2px #0084ff solid;
+    padding: 10px 30px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0084ff;
+    text-transform: uppercase;
+    &.light {
+        border-color: bisque;
+        color: coral;
+    }
+}
+
+/*Inputs*/
+
+.simpleInput {
+    font-size: 14px;
+    line-height: 48px;
+    padding: 0 30px;
+    color: #000;
+    height: 50px;
+    width: 100%;
+    border: 1px #909090 solid;
+    transition: all 200ms linear;
+    &:focus {
+        border-color: #0084ff;
+    }
+    &.invalid {
+        border-color: #f11e1e!important;
+    }
+    /*Light inputs*/
+    &.light {
+        border-color: rgba(255, 255, 255, .5);
+        color: #fff;
+        &:focus {
+            border-color: #fff;
+        }
+    }
+}
+
+textarea.simpleInput {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 22px;
+    height: 140px;
+}
+
+// Placeholer
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+// Placeholder light
+input.light::-webkit-input-placeholder,
+textarea.light::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, .8);
+    opacity: 1;
+}
+
+input.light:-moz-placeholder,
+textarea.light:-moz-placeholder {
+    color: rgba(255, 255, 255, .8);
+    opacity: 1;
+}
+
+input.light::-moz-placeholder,
+textarea.light::-moz-placeholder {
+    color: rgba(255, 255, 255, .8);
+    opacity: 1;
+}
+
+input.light:-ms-input-placeholder,
+textarea.light:-ms-input-placeholder {
+    color: rgba(255, 255, 255, .8);
+    opacity: 1;
+}
+
+/*Radio CheckBox*/
+
+.checkboxEntry {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    min-width: 20px;
+    min-height: 20px;
+    &.light {
+        span {
+            color: rgba(255, 255, 255, .8);
+        }
+        &.radio input:checked + span:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border: 2px #909090 solid;
+            border-radius: 10px;
+        }
+    }
+    input {
+        display: none;
+        &:checked + span:before {
+            border-color: #0084ff;
+            background-color: #0084ff;
+            background-position: center center;
+        }
+    }
+
+    span {
+        position: relative;
+        font-size: 11px;
+        line-height: 20px;
+        padding-left: 30px;
+        display: block;
+        color: #888;
+        text-transform: uppercase;
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border: 1px #909090 solid;
+            border-radius: 2px;
+            background: url(../../img/icon-6.png) 100px center no-repeat #fff;
+            content: "";
+        }
+    }
+    &.radio {
+        span:before {
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            background: none;
+        }
+        & input:checked + span:before {
+            border-color: #0084ff;
+            background-color: #fff;
+            border-width: 7px;
+        }
+    }
+}
+
+/*SumoSelect*/
+
+.sumoWrapper {
+	position: relative;
+}
+
+.SelectBox {
+	cursor: pointer;
+}
+
+.SumoSelect {
+    .CaptionCont > span, label {
+        cursor: pointer;
+    }
+    .optWrapper {
+        border-radius: 0;
+        .options {
+            border-radius: 0;
+            li.opt:first-child,
+            li.opt:last-child {
+                border-radius: 0;
+            }
+        }
+    } 
+}
+
+/*Social*/
+.socialWrapper {
+	position: relative;
+    a {
+        display: block;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    img {
+        max-width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+
+/*----------------------------------------------------------------*/
+/* HOVER
+/*----------------------------------------------------------------*/
+
+@media (min-width: 1024px) {
+    .simpleArticle a:hover {
+        text-decoration: underline;
+    }
+    .buttonClose:hover span {
+        background: #fff;
+    }
+    .checkbox-entry {
+        &:hover span,
+        span a:hover {
+            color: #555;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+    .checkbox-entry.light {
+        &:hover span,
+        span a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+/*----------------------------------------------------------------*/
+/* Media Queries
+/*----------------------------------------------------------------*/
+
+@media (max-width: 1500px) {
+
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+    
+}
+
+@media (max-width: 767px) {
+    
+}
